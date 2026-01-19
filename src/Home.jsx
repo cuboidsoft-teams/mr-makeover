@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import HeroImage from './assets/hero-img.png';
-import Footer from './footer';
+import VidFir from "./assets/vid.mp4";
+import Hair from "./assets/vid-main.mp4";
 
 
 function Home() {
@@ -20,8 +22,8 @@ function Home() {
                                     MR. MAKEOVER represents the perfect blend of innovation and tradition, uniting professional grooming, world-class hair care, trend-driven styling, education, and timeless heritage into one refined experience.
                                 </p>
                                 <div className="hero-cta justify-content-center d-flex gap-2">
-                                    <button className="btn btn-outline-dark rounded-0 btn-lg fw-bold border-2">Explore </button>
-                                    <button className="btn btn-outline-dark rounded-0 btn-lg fw-bold border-2">Book Online</button>
+                                    <Link to="/explore" className="btn btn-outline-dark rounded-0 btn-lg fw-bold border-2">Explore </Link>
+                                    <a href="https://wa.link/ijrg6k" className="btn btn-outline-dark rounded-0 btn-lg fw-bold border-2">Book Online</a>
                                 </div>
                             </div>
                         </div>
@@ -40,29 +42,51 @@ function Home() {
                                 </p>
 
                                 <div className="d-flex flex-wrap gap-3 mt-4">
-                                    <a href="#" className="btn salon-btn">SERVICES</a>
-                                    <a href="#" className="btn salon-btn">LOCATIONS</a>
-                                    <a href="#" className="btn salon-btn">BOOK ONLINE</a>
+                                    <Link to="/explore" className="btn salon-btn">SERVICES</Link>
+                                    <a href="https://maps.app.goo.gl/qdeE9KG45o9p1oLV6" className="btn salon-btn">LOCATION</a>
+                                    <a href="https://wa.link/ijrg6k" className="btn salon-btn">BOOK ONLINE</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-6">
-                            <div className="row g-0 h-100">
-                                <div className="col-6">
-                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e" className="salon-img" />
-                                </div>
-                                <div className="col-6">
-                                    <img src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3" className="salon-img" />
-                                </div>
-                                <div className="col-6">
-                                    <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250" className="salon-img" />
-                                </div>
-                                <div className="col-6">
-                                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1" className="salon-img" />
-                                </div>
-                            </div>
-                        </div>
+                     <div className="col-lg-6">
+  <div className="row g-0 h-100">
+
+    {/* Image 1 */}
+    <div className="col-6">
+      <img
+        src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"
+        className="salon-img"
+        alt="Salon"
+      />
+    </div>
+
+    {/* Image 2 */}
+    <div className="col-6">
+      <img
+        src="https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3"
+        className="salon-img"
+        alt="Salon"
+      />
+    </div>
+
+    {/* Video 1 */}
+    <div className="col-6">
+      <video className="salon-img" autoPlay muted loop playsInline>
+        <source src={VidFir} type="video/mp4" />
+      </video>
+    </div>
+
+    {/* Video 2 */}
+    <div className="col-6">
+      <video className="salon-img" autoPlay muted loop playsInline>
+        <source src={Hair} type="video/mp4" />
+      </video>
+    </div>
+
+  </div>
+</div>
+
 
                     </div>
                 </div>
@@ -113,9 +137,9 @@ function Home() {
                     </p>
 
                     <div className="d-flex flex-wrap gap-3 mt-4">
-                        <a href="#" className="btn style-btn">EXPLORE</a>
+                        <Link to="/explore" className="btn style-btn">EXPLORE</Link>
                         <a href="#" className="btn style-btn">INSTAGRAM</a>
-                        <a href="#" className="btn style-btn">BOOK ONLINE</a>
+                        <a href="https://wa.link/ijrg6k" className="btn style-btn">BOOK ONLINE</a>
                     </div>
                     </div>
                 </div>
@@ -128,7 +152,7 @@ function Home() {
             </div>
             </section>
 
-            <Footer />
+         
         </>
     )
 }
